@@ -19,7 +19,6 @@ class ViaCepApiTest {
                 .statusCode(200)
                 .body("logradouro", equalTo("Praça da Sé"));
     }
-
     @Test
     void testCepValidoComHifen(){
         given()
@@ -28,8 +27,6 @@ class ViaCepApiTest {
                 .then()
                 .statusCode(200);
     }
-
-
     @Test
     void testCepInvalidoComLetras(){
         given()
@@ -38,7 +35,6 @@ class ViaCepApiTest {
                 .then()
                 .statusCode(400);
     }
-
     @Test
     void testCepInvalidoComMaisDigitos(){
         given()
@@ -47,7 +43,6 @@ class ViaCepApiTest {
                 .then()
                 .statusCode(400);
     }
-
     @Test
     void testCepInvalidoComMenosDigitos(){
         given()
@@ -56,7 +51,6 @@ class ViaCepApiTest {
                 .then()
                 .statusCode(400);
     }
-
     @Test
     void testCepInvalidoComCepInexistente(){
         given()
@@ -66,7 +60,6 @@ class ViaCepApiTest {
                 .statusCode(200)
                 .body("erro", equalTo("true"));
     }
-
     @Test
     void testCepInvalidoComCepInexistenteComHifen(){
         given()
@@ -76,7 +69,6 @@ class ViaCepApiTest {
                 .statusCode(200)
                 .body("erro", equalTo("true"));
     }
-
     @Test
     void testCepInvalidoComCepVazio(){
         given()
